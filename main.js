@@ -12,7 +12,9 @@ router.on("/", () => render(HomePage, app));
 router.on("/about", () => render(AboutPage, app));
 router.on("/contact", () => render(ContactPage, app));
 router.on("/projects", () => render(ProjectsPage, app));
-router.on("/project/:id", () => render(DetailProjectPage, app));
+router.on("/project/:id", (params) =>
+  render(() => DetailProjectPage(params), app)
+);
 router.on("/blog", () => render(BlogPage, app));
 router.notFound(() => render(NotFoundPage, app));
 router.resolve();

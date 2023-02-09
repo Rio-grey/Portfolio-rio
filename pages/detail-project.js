@@ -1,7 +1,9 @@
 import Header from "../components/Header";
 import { projects } from "../data";
-const DetailProjectPage = () => {
-  const currentProject = projects.find((project) => project.id == 2);
+import { router } from "../lib";
+const DetailProjectPage = ({ data: { id } }) => {
+  const currentProject = projects.find((project) => project.id == id);
+  if (!currentProject) return router.navigate("/projects");
   return `
     ${Header()}
     <h1>${currentProject.name}</h1>
