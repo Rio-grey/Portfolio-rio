@@ -1,6 +1,6 @@
 // export nhiều biến
-const Homepage = () => {
+const HomePage = () => {
   return `Home page`;
 };
 
-export default Homepage;
+export default HomePage;
