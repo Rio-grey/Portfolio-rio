@@ -7,6 +7,7 @@ import ProjectsPage from "./pages/projects";
 import HomePage from "./pages/home";
 import NotFoundPage from "./pages/not-found";
 import AdminProjectsPage from "./pages/admin/projects";
+import AdminAddProjectPage from "./pages/admin/projects-add";
 const app = document.querySelector("#app");
 
 router.on("/", () => render(HomePage, app));
@@ -19,4 +20,5 @@ router.on("/project/:id", (params) =>
 router.on("/blog", () => render(BlogPage, app));
 router.notFound(() => render(NotFoundPage, app));
 router.on("/admin/projects", () => render(AdminProjectsPage, app));
+router.on("/admin/projects/add", () => render(AdminAddProjectPage, app));
 router.resolve();

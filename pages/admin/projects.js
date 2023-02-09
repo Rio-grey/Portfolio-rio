@@ -16,6 +16,7 @@ const AdminProjectsPage = () => {
     const btns = document.querySelectorAll(".btn-remove");
     for (let btn of btns) {
       const id = btn.dataset.id;
+      setData(data.filter((project) => project.id != id));
       btn.addEventListener("click", function () {
         console.log(id);
       });
