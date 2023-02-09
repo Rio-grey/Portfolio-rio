@@ -5,6 +5,7 @@ import DetailProjectPage from "./pages/detail-project";
 import BlogPage from "./pages/blog";
 import ProjectsPage from "./pages/projects";
 import HomePage from "./pages/home";
+import NotFoundPage from "./pages/not-found";
 const app = document.querySelector("#app");
 
 router.on("/", () => render(HomePage, app));
@@ -13,5 +14,5 @@ router.on("/contact", () => render(ContactPage, app));
 router.on("/projects", () => render(ProjectsPage, app));
 router.on("/project/:id", () => render(DetailProjectPage, app));
 router.on("/posts", () => render(BlogPage, app));
-
+router.notFound(() => render(NotFoundPage, app));
 router.resolve();

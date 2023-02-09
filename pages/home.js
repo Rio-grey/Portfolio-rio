@@ -1,6 +1,9 @@
 // export nhiều biến
 const HomePage = () => {
-  return `Home page`;
+  return `
+    ${Header()}
+    <h1>Home Page</h1>
+  `;
 };
 
 export default HomePage;
