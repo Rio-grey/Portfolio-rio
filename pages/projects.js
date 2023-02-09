@@ -1,13 +1,12 @@
-import { projects } from "../data";
 import Header from "../components/Header";
+import ProjectList from "../components/ProjectList";
 const ProjectsPage = () => {
   return /*html*/ `
     ${Header()}
-    ${projects
-      .map((project) => {
-        return `<div class="project-item"><a href="/project/${project.id}">${project.name}</a></div>`;
-      })
-      .join("")}
+    <h1>Projects Page</h1>
+    <div class="projects">
+      ${ProjectList()}
+    </div>
   `;
 };
 
