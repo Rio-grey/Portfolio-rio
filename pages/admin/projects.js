@@ -41,7 +41,9 @@ const AdminProjectsPage = () => {
                             <td>${project.name}</td>
                             <td width="150"><button class="btn btn-remove btn-danger" data-id="${
                               project.id
-                            }">Remove</button></td>
+                            }">Remove</button><a href="/admin/projects/${
+                      project.id
+                    }/edit">Sửa</a></td>
                         </tr>
                     `;
                   })
