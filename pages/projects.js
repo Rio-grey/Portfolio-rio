@@ -1,8 +1,13 @@
+import { projects } from "../lib";
 import Header from "../components/Header";
 const ProjectsPage = () => {
   return /*html*/ `
     ${Header()}
-    <h1>Projects Page</h1>
+    ${projects
+      .map((project) => {
+        return `<div class="project-item">${project.name}</div>`;
+      })
+      .join("")}
   `;
 };
 
