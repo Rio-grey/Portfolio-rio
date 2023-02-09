@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 
 const ContactPage = () => {
-  return `
+  return /*html */ `
     ${Header()}
     <h1>Contact Page</h1>
   `;

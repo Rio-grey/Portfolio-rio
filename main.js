@@ -21,8 +21,8 @@
 // `
 
 // setupCounter(document.querySelector('#counter'))
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
 import { render, router } from "./lib";
 import HomePage from "./pages/home";
 import ProjectsPage from "./pages/projects";
@@ -52,4 +52,3 @@ router.on("/admin/projects/:id/edit", ({ data }) =>
 router.notFound(() => render(NotFoundPage, app));
 
 router.resolve();
-// render(Homepage, app);
