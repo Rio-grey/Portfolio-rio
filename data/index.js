@@ -2,9 +2,8 @@ const menus = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Projects", path: "/projects" },
-  { name: "About", path: "/about" },
-  { name: "About", path: "/about" },
-  { name: "About", path: "/about" },
+  { name: "Blogs", path: "/blog" },
+  { name: "Contact", path: "/contact" },
 ];
 const projects = [
   {
@@ -48,4 +47,4 @@ const projects = [
     ],
   },
 ];
-export { projects };
+export { projects, menus };
