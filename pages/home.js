@@ -1,3 +1,5 @@
+import Header from "../components/Header";
+
 // export nhiều biến
 const HomePage = () => {
   return `

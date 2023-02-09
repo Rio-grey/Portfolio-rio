@@ -1,14 +1,14 @@
 const Header = () => {
   return /*html*/ `
-      <header>
-          <nav>
-              <a href="">Home</a>
-              <a href="">About</a>
-              <a href="">Projects</a>
-              <a href="">Blogs</a>
-              <a href="">Contact</a>
-          </nav>
-      </header>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>
+        <a href="/blog">Blogs</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
   `;
 };
 export default Header;

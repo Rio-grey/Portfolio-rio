@@ -13,6 +13,6 @@ router.on("/about", () => render(AboutPage, app));
 router.on("/contact", () => render(ContactPage, app));
 router.on("/projects", () => render(ProjectsPage, app));
 router.on("/project/:id", () => render(DetailProjectPage, app));
-router.on("/posts", () => render(BlogPage, app));
+router.on("/blog", () => render(BlogPage, app));
 router.notFound(() => render(NotFoundPage, app));
 router.resolve();
