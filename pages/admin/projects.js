@@ -2,25 +2,15 @@
 import { useEffect, useState } from "../../lib";
 
 const AdminProjectsPage = () => {
-  /**
-   * Các bước thực hiện:
-   * - Bước 1: Thiết lập state
-   * - Bước 2: Lấy dữ liệu từ state và hiển thị ra ngoài
-   * - Bước 3:
-   *  + Sử dụng useEffect
-   *  + Lắng nghe sự kiện click vào nút remove
-   */
-  // Thiết lập state
-
   // Bước 1: Khởi tạo biến data và hàm setData, giá trị là 1 mảng rỗng
-  const [data, setData] = useState([]);
+  const [projects, setProjects] = useState([]);
   // Bước 3: Lấy dữ liệu từ localStorage và gán vào biến data
   useEffect(() => {
-    fetch("https://reqres.in/api/users", {
+    fetch("http://localhost:3000/projects", {
       method: "GET",
     })
       .then((response) => response.json())
-      .then(({ data }) => setData(data));
+      .then((data) => setProjects(data));
     // const projects = JSON.parse(localStorage.getItem("projects")) || [];
     // setData(projects);
   }, []); // chạy 1 lần xong dừng
@@ -53,12 +43,12 @@ const AdminProjectsPage = () => {
           </tr>
         </thead>
         <tbody>
-          ${data
+          ${projects
             .map((project, index) => {
               return /*html*/ `
               <tr>
                 <td>${index + 1}</td>
-                <td>${project.first_name} ${project.last_name}</td>
+                <td>${project.name}</td>
                 <td width="200">
                   <button class="btn btn-remove btn-danger" data-id=${
                     project.id
