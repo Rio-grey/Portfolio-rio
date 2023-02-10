@@ -1,5 +1,5 @@
 import { useEffect, router } from "../../lib";
-// import { projects } from "../../data";
+
 const AdminAddProjectPage = () => {
   useEffect(() => {
     const form = document.getElementById("form-add");

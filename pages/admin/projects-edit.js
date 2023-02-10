@@ -1,5 +1,5 @@
 import { useEffect, router, useState } from "../../lib";
-// import { projects } from "../../data";
+
 const AdminEditProjectPage = ({ id }) => {
   const [project, setProject] = useState({});
   // lấy ra dữ liệu của projects trong localStorage

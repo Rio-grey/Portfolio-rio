@@ -1,4 +1,3 @@
-// import { projects } from "../../data";
 import { useEffect, useState } from "../../lib";
 
 const AdminProjectsPage = () => {
