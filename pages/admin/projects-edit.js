@@ -7,7 +7,7 @@ const AdminEditProjectPage = ({ id }) => {
   // tìm projects theo id
   // const currentProject = projects.find((project) => project.id == id);
   useEffect(() => {
-    fetch(`http//localhost:3000/projects/${id}`)
+    fetch(`http://localhost:3000/projects/${id}`)
       .then((response) => response.json())
       .then((data) => setProject(data));
   }, []);
@@ -36,7 +36,7 @@ const AdminEditProjectPage = ({ id }) => {
       <form id="form-add">
         <div class="form-group">
           <label class="form-label" for="exampleInputEmail1">Tên dự án</label>
-          <input type="text" class="form-control" id="project-name" value="${currentProject.name}"/>
+          <input type="text" class="form-control" id="project-name" value="${project.name}"/>
         </div>
         <button type="submit" class="btn btn-primary">Edit</button>
       </form>
