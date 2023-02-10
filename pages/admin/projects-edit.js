@@ -1,10 +1,16 @@
-import { useEffect, router } from "../../lib";
+import { useEffect, router, useState } from "../../lib";
 // import { projects } from "../../data";
 const AdminEditProjectPage = ({ id }) => {
+  const [project, setProject] = useState({});
   // lấy ra dữ liệu của projects trong localStorage
-  const projects = JSON.parse(localStorage.getItem("projects")) || [];
+  // const projects = JSON.parse(localStorage.getItem("projects")) || [];
   // tìm projects theo id
-  const currentProject = projects.find((project) => project.id == id);
+  // const currentProject = projects.find((project) => project.id == id);
+  useEffect(() => {
+    fetch(`http//localhost:3000/projects/${id}`)
+      .then((response) => response.json())
+      .then((data) => setProject(data));
+  }, []);
   useEffect(() => {
     const form = document.getElementById("form-add");
     const projectName = document.querySelector("#project-name");
@@ -13,21 +19,17 @@ const AdminEditProjectPage = ({ id }) => {
       e.preventDefault();
       // Tạo ra project mới
       const formData = {
-        id: currentProject.id,
         name: projectName.value,
       };
-      const newProjects = projects.map((project) => {
-        // nếu project.id == newProject.id thì trả về mảng đã cập nhật phần tử mới
-        // ngược lại trả về mảng không cập nhật gì
-        return project.id == formData.id ? formData : project;
-      });
-      // lưu vào localStorage
-      localStorage.setItem("projects", JSON.stringify(newProjects));
-      // chuyển hướng về trang admin/projects
-      router.navigate("/admin/projects");
+      fetch(`http://localhost:3000/projects/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // '{'a': '10'}'
+      }).then(() => router.navigate("/admin/projects"));
     });
   });
-  if (!currentProject) return null;
   return /*html*/ `
     <div class="container">
       <h1>Sửa sản phẩm</h1>
