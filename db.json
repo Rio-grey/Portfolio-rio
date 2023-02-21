@@ -2,15 +2,28 @@
   "projects": [
     {
       "name": "Dự án 1",
-      "id": 1
-    },
-    {
-      "name": "Dự án 2",
-      "id": 2
+      "id": 1,
+      "categoryProjectId": 1
     },
     {
       "name": "Dự án tốt nghiệp",
-      "id": 3
+      "id": 2,
+      "categoryProjectId": 1
+    },
+    {
+      "name": "Dự án mẫu",
+      "id": 3,
+      "categoryProjectId": 2
+    }
+  ],
+  "categoryProjects": [
+    {
+      "id": 1,
+      "name": "HTML, CSS"
+    },
+    {
+      "id": 2,
+      "name": "Javascript"
     }
   ]
 }
